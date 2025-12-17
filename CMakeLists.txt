@@ -24,7 +24,7 @@ add_executable(dex ${SOURCES})
 
 # Install target: puts binary in /usr/local/bin
 install(TARGETS dex
-    RUNTIME DESTINATION /usr/local/bin
+    RUNTIME DESTINATION .local/bin/
 )
 
 # Create uninstall target
