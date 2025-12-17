@@ -14,7 +14,7 @@ git clone https://github.com/yourusername/dex.git
 cd dex
 cmake -B build
 cmake --build build
-sudo cmake --install build
+cmake --install build
 ````
 
 * Installs the `dex` binary to `/usr/local/bin/dex` by default.
@@ -22,7 +22,7 @@ sudo cmake --install build
 ### 🗑 Uninstallation
 
 ```bash
-sudo make -C build uninstall
+make -C build uninstall
 ```
 
 * Removes the binary from your system.

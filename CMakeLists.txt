@@ -13,6 +13,11 @@ if(NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE Release)
 endif()
 
+# Set default install prefix to user's home directory if not specified
+if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
+  set(CMAKE_INSTALL_PREFIX "$ENV{HOME}/.local" CACHE PATH "Install prefix" FORCE)
+endif()
+
 # Include header files
 include_directories(include)
 
@@ -22,9 +27,9 @@ file(GLOB SOURCES "src/*.c")
 # Add executable
 add_executable(dex ${SOURCES})
 
-# Install target: puts binary in /usr/local/bin
+# Install target: puts binary in ~/.local/bin
 install(TARGETS dex
-    RUNTIME DESTINATION .local/bin/
+    RUNTIME DESTINATION bin
 )
 
 # Create uninstall target
